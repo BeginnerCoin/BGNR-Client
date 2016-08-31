@@ -1,0 +1,6 @@
+usr/local/bin/beginnercoin-qt usr/bin
+share/pixmaps/beginnercoin32.xpm usr/share/pixmaps
+share/pixmaps/beginnercoin16.xpm usr/share/pixmaps
+share/pixmaps/beginnercoin128.png usr/share/pixmaps
+debian/beginnercoin-qt.desktop usr/share/applications
+debian/beginnercoin-qt.protocol usr/share/kde4/services/
