@@ -25,4 +25,4 @@ For more information, as well as an immediately useable version of the BeginnerC
 License
 -------
 
-Beginnercoin Core is released under the terms of the MIT license. See http://opensource.org/licenses/MIT for more information.
+Beginnercoin Core is released under the terms of the MIT license. See COPYING or http://opensource.org/licenses/MIT for more information.
