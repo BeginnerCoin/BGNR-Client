@@ -1,118 +1,29 @@
-Beginnercoin Core integration/staging tree
+BeginnerCoin Core integration/staging tree
 =====================================
 
-http://www.beginnercoin.org
+http://www.beginnercoin.com
 
-Copyright (c) 2009-2014 Beginnercoin Core Developers
+Copyright (c) 2009-2016 BeginnerCoin Core Developers
 
-What is Beginnercoin?
+What is BeginnerCoin?
 ----------------
 
-Beginnercoin is an experimental new digital currency that enables instant payments to
-anyone, anywhere in the world. Beginnercoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Beginnercoin Core is the name of open source
-software which enables the use of this currency.
+BeginnerCoin is a free, open-source project to help drastically lower the barrier to entry to enjoying the benefits of the cryptocurrency world.  The technology can be imposing. It is initially very difficult to comprehend, wrapped in a technical bubble of programming jargon. But Bitcoin and many other Cryptocurrencies are not just for the technically savvy among us.
 
-For more information, as well as an immediately useable, binary version of
-the Beginnercoin Core software, see http://www.beginnercoin.org/en/download.
+We aim to lift the veil and let people know there is nothing to be intimidated by - especially when you us common sense security precautions. BGNR is the cryptocurrency of the BeginnerCoin blockchain, used to power the entire BeginnerCoin ecosystem. Our software is a modified fork (open-source variation) of the original Bitcoin protocol and software. You can mine BeginnerCoin while also mining bitcoin through a process called merge-mining.
+
+Unlike Bitcoin, we aren't here to try to radically change the world's economic system. We're just here to help you understand how it all works. And why it matters.
+
+We wish to provide a stepping stone to let you, your friends and your business partners realize the great potential represented by cryptocurrencies and the blockchain technology.
+
+Our goal is enable anyone with basic computer skills to receive, send and trade cryptocurrencies without risk to gain familiarity in using cryptocurrency and wallet software.  We are here to help you understand how to facilitate day-to-day transactions with cryptocurrency to remove the unknown and help you understand its full potential. You will discover that it’s no different than using any other computer software. The difference is that units of cryptocurrency can be worth hundreds - even thousands - each in U.S. Dollar value.
+
+But that's not the reason you should consider using cryptocurrency. You should be using it because cryptocurrency empowers you.
+
+For more information, as well as an immediately useable version of the BeginnerCoin Core software, see http://www.beginnercoin.com/forum/index.php?topic=22.0
 
 License
 -------
 
 Beginnercoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see http://opensource.org/licenses/MIT.
-
-Development process
--------------------
-
-Developers work in their own trees, then submit pull requests when they think
-their feature or bug fix is ready.
-
-If it is a simple/trivial/non-controversial change, then one of the Beginnercoin
-development team members simply pulls it.
-
-If it is a *more complicated or potentially controversial* change, then the patch
-submitter will be asked to start a discussion (if they haven't already) on the
-[mailing list](http://sourceforge.net/mailarchive/forum.php?forum_name=beginnercoin-development).
-
-The patch will be accepted if there is broad consensus that it is a good thing.
-Developers should expect to rework and resubmit patches if the code doesn't
-match the project's coding conventions (see [doc/coding.md](doc/coding.md)) or are
-controversial.
-
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/beginnercoin/beginnercoin/tags) are created
-regularly to indicate new official, stable release versions of Beginnercoin.
-
-Testing
--------
-
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test. Please be patient and help out, and
-remember this is a security-critical project where any mistake might cost people
-lots of money.
-
-### Automated Testing
-
-Developers are strongly encouraged to write unit tests for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run (assuming they weren't disabled in configure) with: `make check`
-
-Every pull request is built for both Windows and Linux on a dedicated server,
-and unit and sanity tests are automatically run. The binaries produced may be
-used for manual QA testing — a link to them will appear in a comment on the
-pull request posted by [BeginnercoinPullTester](https://github.com/BeginnercoinPullTester). See https://github.com/TheBlueMatt/test-scripts
-for the build/test scripts.
-
-### Manual Quality Assurance (QA) Testing
-
-Large changes should have a test plan, and should be tested by somebody other
-than the developer who wrote the code.
-See https://github.com/beginnercoin/QA/ for how to create a test plan.
-
-Translations
-------------
-
-Changes to translations as well as new translations can be submitted to
-[Beginnercoin Core's Transifex page](https://www.transifex.com/projects/p/beginnercoin/).
-
-Periodically the translations are pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as github pull request because the next
-pull from Transifex would automatically overwrite them again.
-
-Development tips and tricks
----------------------------
-
-**compiling for debugging**
-
-Run configure with the --enable-debug option, then make. Or run configure with
-CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
-
-**debug.log**
-
-If the code is behaving strangely, take a look in the debug.log file in the data directory;
-error and debugging message are written there.
-
-The -debug=... command-line option controls debugging; running with just -debug will turn
-on all categories (and give you a very large debug.log file).
-
-The Qt code routes qDebug() output to debug.log under category "qt": run with -debug=qt
-to see it.
-
-**testnet and regtest modes**
-
-Run with the -testnet option to run with "play beginnercoins" on the test network, if you
-are testing multi-machine code that needs to operate across the internet.
-
-If you are testing something that can run on one machine, run with the -regtest option.
-In regression test mode blocks can be created on-demand; see qa/rpc-tests/ for tests
-that run in -regest mode.
-
-**DEBUG_LOCKORDER**
-
-Beginnercoin Core is a multithreaded application, and deadlocks or other multithreading bugs
-can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
-CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of what locks
-are held, and adds warning to the debug.log file if inconsistencies are detected.
